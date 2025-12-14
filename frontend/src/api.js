@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://your-sweets-shop-backend.vercel.app/api",
 });
 
 api.interceptors.request.use((config) => {
@@ -12,3 +12,4 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
