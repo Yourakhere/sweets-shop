@@ -1,10 +1,3 @@
-<img width="600" height="450" alt="image" src="https://github.com/user-attachments/assets/a2b5a358-ca49-4537-bb79-949e85d77aae" />Below is a **professional, company-ready project description** you can directly use for **project submission, internship reporting, or portfolio sharing**.
-I have written it in **clear, formal language**, suitable for corporate review, and included your **live URL**.
-
----
-
-# Project Title
-
 **Sweet Shop – Full Stack MERN Web Application**
 
 ---
@@ -121,15 +114,3 @@ Through this project, I gained hands-on experience in:
 **Role:** Full Stack Developer (MERN)
 **GitHub Repository:** [https://github.com/Yourakhere/sweets-shop](https://github.com/Yourakhere/sweets-shop)
 **Live Demo:** [https://sweets-shops.vercel.app/](https://sweets-shops.vercel.app/)
-
----
-
-If you want, I can also provide:
-
-
-* A **short 5–6 line submission version**
-* A **resume-ready project description**
-* A **LinkedIn project post**
-* A **company email submission paragraph**
-
-Just tell me which format you need.
