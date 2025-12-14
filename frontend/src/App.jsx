@@ -22,8 +22,7 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
 function AppRoutes() {
   return (
     <>
-      <Navbar />
-      <div className="container" style={{ padding: '2rem' }}>
+      <Navbar /> 
         <Routes>
           <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
