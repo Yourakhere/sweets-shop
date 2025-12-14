@@ -33,7 +33,6 @@ function AppRoutes() {
           <Route path="/register" element={<AuthPages />} />
           <Route path="/admin" element={<ProtectedRoute adminOnly={true}><Admin /></ProtectedRoute>} />
         </Routes>
-      </div>
     </>
   );
 }
