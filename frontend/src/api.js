@@ -3,7 +3,7 @@ import axios from "axios";
 export const api = axios.create({
   baseURL: "https://your-sweets-shop-backend.vercel.app/api",
 });
-
+//http://localhost:5000/
 api.interceptors.request.use((config) => {
   const userInfo = localStorage.getItem('userInfo');
   if (userInfo) {
@@ -12,4 +12,3 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
-

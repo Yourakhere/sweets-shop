@@ -7,7 +7,7 @@ const AuthPages = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '', confirmPassword: '', isAdmin: false });
     const [error, setError] = useState('');
 
-    const { login, register } = useAuth(); // Assuming register method exists in context, if not I will need to verify
+    const { login, register } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -55,58 +55,35 @@ const AuthPages = () => {
     };
 
     return (
-        <div style={{
-            minHeight: '100vh',
-            background: 'linear-gradient(135deg, #d4a574 0%, #c49563 50%, #b8915f 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '2rem'
-        }}>
-            <div style={{
-                width: '100%',
-                maxWidth: '500px'
-            }}>
+        <div className="min-h-screen bg-gradient-to-br from-amber-700 via-amber-600 to-amber-500 flex items-center justify-center p-4">
+            <div className="w-full max-w-md">
                 {/* Form Card */}
-                <div style={{
-                    background: 'white',
-                    borderRadius: '20px',
-                    boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
-                    padding: '3rem 2rem',
-                    marginBottom: '2rem'
-                }}>
+                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden p-8 md:p-10">
                     {/* Header */}
-                    <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                        <h1 style={{ fontSize: '2.5rem', margin: '0 0 0.5rem 0' }}>🍰</h1>
-                        <h2 style={{ color: '#8b4513', margin: '0 0 0.5rem 0', fontSize: '2rem', fontWeight: 'bold' }}>
+                    <div className="text-center mb-8">
+                        <div className="text-5xl mb-4">🍰</div>
+                        <h2 className="text-3xl font-bold text-amber-800 mb-2">
                             {isLogin ? 'Welcome Back' : 'Join Sweet Paradise'}
                         </h2>
-                        <p style={{ color: '#a0522d', margin: '0' }}>
+                        <p className="text-amber-700/80">
                             {isLogin ? 'Login to your account' : 'Create your account'}
                         </p>
                     </div>
 
                     {/* Error Message */}
                     {error && (
-                        <div style={{
-                            background: '#faddd1',
-                            border: '2px solid #e74c3c',
-                            color: '#c0392b',
-                            padding: '1rem',
-                            borderRadius: '8px',
-                            marginBottom: '1.5rem',
-                            fontWeight: 'bold'
-                        }}>
-                            ⚠️ {error}
+                        <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded-lg mb-6 flex items-start gap-3">
+                            <span>⚠️</span>
+                            <span className="font-semibold">{error}</span>
                         </div>
                     )}
 
                     {/* Form */}
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className="space-y-5">
                         {/* Name Field (Register Only) */}
                         {!isLogin && (
-                            <div style={{ marginBottom: '1.5rem' }}>
-                                <label style={{ display: 'block', color: '#8b4513', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                            <div>
+                                <label className="block text-amber-900 font-bold mb-2">
                                     👤 Full Name
                                 </label>
                                 <input
@@ -115,24 +92,14 @@ const AuthPages = () => {
                                     placeholder="Enter your full name"
                                     value={formData.name}
                                     onChange={handleChange}
-                                    style={{
-                                        width: '100%',
-                                        padding: '0.75rem 1rem',
-                                        border: '2px solid #e8d4c4',
-                                        borderRadius: '8px',
-                                        fontSize: '1rem',
-                                        boxSizing: 'border-box',
-                                        transition: 'border-color 0.3s'
-                                    }}
-                                    onFocus={(e) => e.target.style.borderColor = '#d4a574'}
-                                    onBlur={(e) => e.target.style.borderColor = '#e8d4c4'}
+                                    className="w-full px-4 py-3 rounded-xl border-2 border-orange-100 focus:border-amber-500 focus:outline-none transition-colors"
                                 />
                             </div>
                         )}
 
                         {/* Email Field */}
-                        <div style={{ marginBottom: '1.5rem' }}>
-                            <label style={{ display: 'block', color: '#8b4513', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                        <div>
+                            <label className="block text-amber-900 font-bold mb-2">
                                 📧 Email Address
                             </label>
                             <input
@@ -141,22 +108,13 @@ const AuthPages = () => {
                                 placeholder="Enter your email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem 1rem',
-                                    border: '2px solid #e8d4c4',
-                                    borderRadius: '8px',
-                                    fontSize: '1rem',
-                                    boxSizing: 'border-box'
-                                }}
-                                onFocus={(e) => e.target.style.borderColor = '#d4a574'}
-                                onBlur={(e) => e.target.style.borderColor = '#e8d4c4'}
+                                className="w-full px-4 py-3 rounded-xl border-2 border-orange-100 focus:border-amber-500 focus:outline-none transition-colors"
                             />
                         </div>
 
                         {/* Password Field */}
-                        <div style={{ marginBottom: '1.5rem' }}>
-                            <label style={{ display: 'block', color: '#8b4513', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                        <div>
+                            <label className="block text-amber-900 font-bold mb-2">
                                 🔐 Password
                             </label>
                             <input
@@ -165,23 +123,14 @@ const AuthPages = () => {
                                 placeholder="Enter your password"
                                 value={formData.password}
                                 onChange={handleChange}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem 1rem',
-                                    border: '2px solid #e8d4c4',
-                                    borderRadius: '8px',
-                                    fontSize: '1rem',
-                                    boxSizing: 'border-box'
-                                }}
-                                onFocus={(e) => e.target.style.borderColor = '#d4a574'}
-                                onBlur={(e) => e.target.style.borderColor = '#e8d4c4'}
+                                className="w-full px-4 py-3 rounded-xl border-2 border-orange-100 focus:border-amber-500 focus:outline-none transition-colors"
                             />
                         </div>
 
                         {/* Confirm Password (Register Only) */}
                         {!isLogin && (
-                            <div style={{ marginBottom: '1.5rem' }}>
-                                <label style={{ display: 'block', color: '#8b4513', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                            <div>
+                                <label className="block text-amber-900 font-bold mb-2">
                                     🔐 Confirm Password
                                 </label>
                                 <input
@@ -190,57 +139,25 @@ const AuthPages = () => {
                                     placeholder="Confirm your password"
                                     value={formData.confirmPassword}
                                     onChange={handleChange}
-                                    style={{
-                                        width: '100%',
-                                        padding: '0.75rem 1rem',
-                                        border: '2px solid #e8d4c4',
-                                        borderRadius: '8px',
-                                        fontSize: '1rem',
-                                        boxSizing: 'border-box'
-                                    }}
-                                    onFocus={(e) => e.target.style.borderColor = '#d4a574'}
-                                    onBlur={(e) => e.target.style.borderColor = '#e8d4c4'}
+                                    className="w-full px-4 py-3 rounded-xl border-2 border-orange-100 focus:border-amber-500 focus:outline-none transition-colors"
                                 />
                             </div>
                         )}
 
                         {/* Admin Checkbox (Register Only) */}
                         {!isLogin && (
-                            <div style={{
-                                marginBottom: '1.5rem',
-                                background: '#f9f5f0',
-                                padding: '1rem',
-                                borderRadius: '8px',
-                                border: '2px solid #e8d4c4'
-                            }}>
-                                <label style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.75rem',
-                                    color: '#8b4513',
-                                    fontWeight: 'bold',
-                                    cursor: 'pointer',
-                                    margin: '0'
-                                }}>
+                            <div className="bg-orange-50 p-4 rounded-xl border border-orange-100">
+                                <label className="flex items-center gap-3 cursor-pointer">
                                     <input
                                         type="checkbox"
                                         name="isAdmin"
                                         checked={formData.isAdmin}
                                         onChange={handleChange}
-                                        style={{
-                                            width: '20px',
-                                            height: '20px',
-                                            cursor: 'pointer',
-                                            accentColor: '#d4a574'
-                                        }}
+                                        className="w-5 h-5 accent-amber-600 rounded cursor-pointer"
                                     />
-                                    <span>⚙️ Register as Admin</span>
+                                    <span className="font-bold text-amber-800">⚙️ Register as Admin</span>
                                 </label>
-                                <p style={{
-                                    margin: '0.5rem 0 0 2rem',
-                                    color: '#a0522d',
-                                    fontSize: '0.9rem'
-                                }}>
+                                <p className="text-sm text-amber-700/70 mt-2 ml-8">
                                     Admin accounts can manage inventory and products
                                 </p>
                             </div>
@@ -249,36 +166,15 @@ const AuthPages = () => {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            style={{
-                                width: '100%',
-                                padding: '1rem',
-                                background: 'linear-gradient(135deg, #d4a574 0%, #c49563 100%)',
-                                color: 'white',
-                                border: 'none',
-                                borderRadius: '8px',
-                                fontSize: '1.1rem',
-                                fontWeight: 'bold',
-                                cursor: 'pointer',
-                                transition: 'transform 0.2s, box-shadow 0.2s',
-                                boxShadow: '0 4px 15px rgba(212, 165, 116, 0.4)',
-                                marginTop: '1rem'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.target.style.transform = 'translateY(-2px)';
-                                e.target.style.boxShadow = '0 6px 20px rgba(212, 165, 116, 0.6)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.target.style.transform = 'translateY(0)';
-                                e.target.style.boxShadow = '0 4px 15px rgba(212, 165, 116, 0.4)';
-                            }}
+                            className="w-full py-4 bg-gradient-to-r from-amber-600 to-amber-700 text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mt-4"
                         >
                             {isLogin ? '✓ Login' : '✓ Create Account'}
                         </button>
                     </form>
 
                     {/* Toggle Link */}
-                    <div style={{ textAlign: 'center', marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid #e8d4c4' }}>
-                        <p style={{ color: '#666', margin: '0 0 0.5rem 0' }}>
+                    <div className="text-center mt-8 pt-6 border-t border-orange-100">
+                        <p className="text-gray-600 mb-2">
                             {isLogin ? "Don't have an account?" : 'Already have an account?'}
                         </p>
                         <button
@@ -287,15 +183,7 @@ const AuthPages = () => {
                                 setFormData({ name: '', email: '', password: '', confirmPassword: '', isAdmin: false });
                                 setError('');
                             }}
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                color: '#d4a574',
-                                fontSize: '1rem',
-                                fontWeight: 'bold',
-                                cursor: 'pointer',
-                                textDecoration: 'underline'
-                            }}
+                            className="text-amber-600 font-bold hover:text-amber-700 hover:underline text-lg"
                         >
                             {isLogin ? 'Register here' : 'Login here'}
                         </button>
@@ -303,8 +191,8 @@ const AuthPages = () => {
                 </div>
 
                 {/* Footer */}
-                <div style={{ textAlign: 'center', color: 'white' }}>
-                    <p style={{ margin: '0', opacity: 0.9 }}>🍰 Sweet Paradise - Your favorite online sweet shop</p>
+                <div className="text-center text-white/80 mt-6 text-sm">
+                    <p>🍰 Sweet Paradise - Your favorite online sweet shop</p>
                 </div>
             </div>
         </div>

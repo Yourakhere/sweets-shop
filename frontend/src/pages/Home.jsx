@@ -47,220 +47,168 @@ const Home = () => {
     };
 
     return (
-        <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%)' }}>
+        <div className="min-h-screen bg-orange-50">
             {/* Hero Section */}
-            <div style={{
-                background: 'linear-gradient(135deg, #d4a574 0%, #c49563 100%)',
-                color: 'white',
-                padding: '4rem 2rem',
-                textAlign: 'center',
-                marginBottom: '3rem',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-            }}>
-                <h1 style={{ fontSize: '3.5rem', margin: '0 0 0.5rem 0', fontWeight: 'bold' }}>🍰 Sweet Paradise</h1>
-                <p style={{ fontSize: '1.3rem', margin: '0', opacity: 0.95 }}>Delicious handcrafted sweets delivered to your door</p>
+            <div className="bg-gradient-to-br from-amber-700 to-amber-900 text-white py-16 px-4 text-center shadow-lg mb-12">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-md">🍰 Sweet Paradise</h1>
+                <p className="text-lg md:text-2xl opacity-90 max-w-2xl mx-auto">Delicious handcrafted sweets delivered right to your door</p>
             </div>
 
-            <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 2rem 3rem' }}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
                 {/* Filters Section */}
-                <div style={{
-                    background: 'white',
-                    padding: '2rem',
-                    borderRadius: '15px',
-                    boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
-                    marginBottom: '3rem'
-                }}>
-                    <h2 style={{ color: '#8b4513', marginTop: '0', marginBottom: '1.5rem', fontSize: '1.5rem' }}>🔍 Find Your Favorite</h2>
+                <div className="bg-white p-6 rounded-2xl shadow-md mb-12 transform hover:shadow-lg transition-shadow duration-300">
+                    <h2 className="text-2xl font-bold text-amber-800 mb-6 flex items-center gap-2">
+                        <span>🔍</span> Find Your Favorite
+                    </h2>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                         <div>
-                            <label style={{ display: 'block', color: '#666', fontSize: '0.9rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Search</label>
+                            <label className="block text-gray-600 text-sm font-bold mb-2">Search</label>
                             <input
                                 placeholder="Search sweet name..."
                                 value={search}
                                 onChange={e => setSearch(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem',
-                                    borderRadius: '8px',
-                                    border: '2px solid #e8d4c4',
-                                    fontSize: '1rem',
-                                    boxSizing: 'border-box'
-                                }}
+                                className="w-full px-4 py-3 rounded-lg border-2 border-orange-100 focus:border-amber-500 focus:outline-none transition-colors"
                             />
                         </div>
 
                         <div>
-                            <label style={{ display: 'block', color: '#666', fontSize: '0.9rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Category</label>
+                            <label className="block text-gray-600 text-sm font-bold mb-2">Category</label>
                             <select
                                 value={category}
                                 onChange={e => setCategory(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem',
-                                    borderRadius: '8px',
-                                    border: '2px solid #e8d4c4',
-                                    fontSize: '1rem',
-                                    boxSizing: 'border-box',
-                                    cursor: 'pointer'
-                                }}
+                                className="w-full px-4 py-3 rounded-lg border-2 border-orange-100 focus:border-amber-500 focus:outline-none cursor-pointer bg-white"
                             >
-                                <option value="">All</option>
+                                <option value="">All Categories</option>
                                 {categories.filter(c => c !== 'All').map(cat => <option key={cat} value={cat}>{cat}</option>)}
                             </select>
                         </div>
 
                         <div>
-                            <label style={{ display: 'block', color: '#666', fontSize: '0.9rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Min Price</label>
+                            <label className="block text-gray-600 text-sm font-bold mb-2">Min Price</label>
                             <input
                                 type="number"
                                 placeholder="Min..."
                                 value={minPrice}
                                 onChange={e => setMinPrice(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem',
-                                    borderRadius: '8px',
-                                    border: '2px solid #e8d4c4',
-                                    fontSize: '1rem',
-                                    boxSizing: 'border-box'
-                                }}
+                                className="w-full px-4 py-3 rounded-lg border-2 border-orange-100 focus:border-amber-500 focus:outline-none transition-colors"
                             />
                         </div>
 
                         <div>
-                            <label style={{ display: 'block', color: '#666', fontSize: '0.9rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Max Price</label>
+                            <label className="block text-gray-600 text-sm font-bold mb-2">Max Price</label>
                             <input
                                 type="number"
                                 placeholder="Max..."
                                 value={maxPrice}
                                 onChange={e => setMaxPrice(e.target.value)}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem',
-                                    borderRadius: '8px',
-                                    border: '2px solid #e8d4c4',
-                                    fontSize: '1rem',
-                                    boxSizing: 'border-box'
-                                }}
+                                className="w-full px-4 py-3 rounded-lg border-2 border-orange-100 focus:border-amber-500 focus:outline-none transition-colors"
                             />
                         </div>
                     </div>
 
                     {filtered.length > 0 && (
-                        <p style={{ color: '#d4a574', fontWeight: 'bold', margin: '0' }}>
+                        <p className="text-amber-600 font-bold border-t border-orange-100 pt-4">
                             Found {filtered.length} sweet{filtered.length !== 1 ? 's' : ''}
                         </p>
                     )}
                 </div>
 
                 {loading ? (
-                    <div style={{ textAlign: 'center', fontSize: '1.5rem', color: '#8b4513' }}>Loading delicious sweets...</div>
+                    <div className="text-center py-20">
+                        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-amber-600 mx-auto mb-4"></div>
+                        <p className="text-2xl text-amber-800 font-semibold">Loading delicious sweets...</p>
+                    </div>
                 ) : (
                     /* Products Grid */
                     filtered.length > 0 ? (
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {filtered.map(sweet => (
                                 <div
                                     key={sweet._id}
-                                    style={{
-                                        background: 'white',
-                                        borderRadius: '15px',
-                                        overflow: 'hidden',
-                                        boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
-                                        transition: 'transform 0.3s, box-shadow 0.3s',
-                                        cursor: 'pointer'
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.currentTarget.style.transform = 'translateY(-8px)';
-                                        e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.15)';
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.currentTarget.style.transform = 'translateY(0)';
-                                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.08)';
-                                    }}
+                                    className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col"
                                 >
                                     {/* Image */}
-                                    <div style={{
-                                        background: 'linear-gradient(135deg, #f5e6d3 0%, #e8d4c4 100%)',
-                                        height: '200px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        fontSize: '80px',
-                                        overflow: 'hidden'
-                                    }}>
-                                        {sweet.image.startsWith('http') ? <img src={sweet.image} alt={sweet.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : sweet.image}
+                                    <div className="h-56 bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center relative overflow-hidden">
+                                        {sweet.image && sweet.image.startsWith('http') ? (
+                                            <img
+                                                src={sweet.image}
+                                                alt={sweet.name}
+                                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                            />
+                                        ) : (
+                                            <span className="text-8xl select-none filter drop-shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                                                {sweet.image || '🍬'}
+                                            </span>
+                                        )}
+                                        {/* Badge if low stock usually goes here, but specific logic wasn't in original */}
                                     </div>
 
                                     {/* Content */}
-                                    <div style={{ padding: '1.5rem' }}>
-                                        <h3 style={{ color: '#8b4513', margin: '0 0 0.5rem 0', fontSize: '1.2rem', fontWeight: 'bold' }}>
-                                            {sweet.name}
-                                        </h3>
-
-                                        <p style={{ color: '#a0522d', margin: '0 0 0.75rem 0', fontSize: '0.95rem' }}>
-                                            📂 {sweet.category}
-                                        </p>
-
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-                                            <span style={{ color: '#ffc107', fontSize: '0.9rem' }}>★</span>
-                                            <span style={{ color: '#666', fontSize: '0.9rem' }}>4.8 (Average)</span>
+                                    <div className="p-6 flex-1 flex flex-col">
+                                        <div className="flex justify-between items-start mb-2">
+                                            <h3 className="text-xl font-bold text-gray-800 leading-tight">
+                                                {sweet.name}
+                                            </h3>
+                                            <span className="bg-orange-100 text-amber-800 text-xs font-bold px-2 py-1 rounded-full whitespace-nowrap">
+                                                {sweet.category}
+                                            </span>
                                         </div>
 
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem' }}>
-                                            <span style={{ fontSize: '1.8rem', color: '#d4a574', fontWeight: 'bold' }}>{sweet.price}</span>
-                                            {sweet.quantity > 0 ? (
-                                                <span style={{ fontSize: '0.85rem', color: '#27ae60', fontWeight: 'bold', background: '#e8f5e9', padding: '0.4rem 0.8rem', borderRadius: '20px' }}>
-                                                    ✓ In Stock
-                                                </span>
-                                            ) : (
-                                                <span style={{ fontSize: '0.85rem', color: '#e74c3c', fontWeight: 'bold', background: '#faddd1', padding: '0.4rem 0.8rem', borderRadius: '20px' }}>
-                                                    Out of Stock
-                                                </span>
-                                            )}
+                                        <div className="flex items-center gap-2 mb-4">
+                                            <span className="text-yellow-400">★</span>
+                                            <span className="text-gray-500 text-sm">4.8 (Average)</span>
                                         </div>
 
-                                        <button
-                                            onClick={() => handlePurchase(sweet)}
-                                            disabled={sweet.quantity === 0}
-                                            style={{
-                                                width: '100%',
-                                                padding: '0.75rem',
-                                                marginTop: '1rem',
-                                                background: sweet.quantity === 0 ? '#ccc' : 'linear-gradient(135deg, #d4a574 0%, #c49563 100%)',
-                                                color: 'white',
-                                                border: 'none',
-                                                borderRadius: '8px',
-                                                fontSize: '1rem',
-                                                fontWeight: 'bold',
-                                                cursor: sweet.quantity === 0 ? 'not-allowed' : 'pointer',
-                                                transition: 'opacity 0.3s',
-                                                opacity: sweet.quantity === 0 ? 0.6 : 1
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                if (sweet.quantity > 0) e.target.style.opacity = '0.9';
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                if (sweet.quantity > 0) e.target.style.opacity = '1';
-                                            }}
-                                        >
-                                            {sweet.quantity === 0 ? 'Out of Stock' : '🛒 Add to Cart'}
-                                        </button>
+                                        <div className="mt-auto">
+                                            <div className="flex justify-between items-center mb-4">
+                                                <span className="text-3xl font-bold text-amber-600">
+                                                    ${sweet.price}
+                                                </span>
+                                                {sweet.quantity > 0 ? (
+                                                    <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                                                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                                                        In Stock
+                                                    </span>
+                                                ) : (
+                                                    <span className="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                                                        <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                                                        Out of Stock
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            <button
+                                                onClick={() => handlePurchase(sweet)}
+                                                disabled={sweet.quantity === 0}
+                                                className={`w-full py-3 rounded-xl font-bold text-lg shadow-md transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2
+                                                    ${sweet.quantity === 0
+                                                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                                                        : 'bg-gradient-to-r from-amber-600 to-amber-700 text-white hover:from-amber-700 hover:to-amber-800 hover:shadow-lg'
+                                                    }`}
+                                            >
+                                                {sweet.quantity === 0 ? 'Out of Stock' : (
+                                                    <>
+                                                        🛒 <span>Add to Cart</span>
+                                                    </>
+                                                )}
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <div style={{
-                            textAlign: 'center',
-                            padding: '4rem 2rem',
-                            background: 'white',
-                            borderRadius: '15px',
-                            boxShadow: '0 8px 25px rgba(0,0,0,0.08)'
-                        }}>
-                            <p style={{ fontSize: '2rem', color: '#8b4513', fontWeight: 'bold', margin: '0 0 0.5rem 0' }}>No sweets found 😞</p>
-                            <p style={{ color: '#a0522d', margin: '0' }}>Try adjusting your filters to find what you're looking for</p>
+                        <div className="bg-white rounded-2xl shadow-md p-12 text-center max-w-2xl mx-auto">
+                            <span className="text-6xl mb-4 block">😞</span>
+                            <h2 className="text-2xl font-bold text-amber-800 mb-2">No sweets found</h2>
+                            <p className="text-amber-700">Try adjusting your filters to find what you're looking for</p>
+                            <button
+                                onClick={() => { setSearch(''); setCategory(''); setMinPrice(''); setMaxPrice(''); }}
+                                className="mt-6 px-6 py-2 bg-orange-100 text-amber-800 font-bold rounded-lg hover:bg-orange-200 transition-colors"
+                            >
+                                Clear All Filters
+                            </button>
                         </div>
                     )
                 )}
