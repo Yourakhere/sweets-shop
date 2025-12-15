@@ -22,7 +22,7 @@ const OrderHistory = () => {
     }, []);
 
     return (
-        <div className="order-history-page">
+        <div className="order-history-page" style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
             <h1>My Orders</h1>
             {loading ? (
                 <div>Loading...</div>

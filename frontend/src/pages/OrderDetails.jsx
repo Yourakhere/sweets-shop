@@ -50,7 +50,7 @@ const OrderDetails = () => {
     if (!order) return <div>Order not found</div>;
 
     return (
-        <div className="order-details-page">
+        <div className="order-details-page" style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem' }}>
             <h1>Order {order._id}</h1>
 
             <div className="tracking-status" style={{ padding: '20px', background: '#f0f0f0', margin: '20px 0', borderRadius: '8px', textAlign: 'center' }}>

@@ -22,17 +22,17 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
 function AppRoutes() {
   return (
     <>
-      <Navbar /> 
-        <Routes>
-          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-          <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-          <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
-          <Route path="/orders" element={<ProtectedRoute><OrderHistory /></ProtectedRoute>} />
-          <Route path="/order/:id" element={<ProtectedRoute><OrderDetails /></ProtectedRoute>} />
-          <Route path="/login" element={<AuthPages />} />
-          <Route path="/register" element={<AuthPages />} />
-          <Route path="/admin" element={<ProtectedRoute adminOnly={true}><Admin /></ProtectedRoute>} />
-        </Routes>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+        <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+        <Route path="/orders" element={<ProtectedRoute><OrderHistory /></ProtectedRoute>} />
+        <Route path="/order/:id" element={<ProtectedRoute><OrderDetails /></ProtectedRoute>} />
+        <Route path="/login" element={<AuthPages />} />
+        <Route path="/register" element={<AuthPages />} />
+        <Route path="/admin" element={<ProtectedRoute adminOnly={true}><Admin /></ProtectedRoute>} />
+      </Routes>
     </>
   );
 }
