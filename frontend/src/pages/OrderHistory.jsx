@@ -61,7 +61,7 @@ const OrderHistory = () => {
                                                 {new Date(order.createdAt).toLocaleDateString()}
                                             </td>
                                             <td className="p-4 font-bold text-amber-800">
-                                                ${order.totalPrice.toFixed(2)}
+                                                {order.totalPrice.toFixed(2)}
                                             </td>
                                             <td className="p-4">
                                                 {order.isPaid ? (
@@ -99,3 +99,4 @@ const OrderHistory = () => {
 };
 
 export default OrderHistory;
+
