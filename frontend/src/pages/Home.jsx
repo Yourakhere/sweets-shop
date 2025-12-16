@@ -163,7 +163,7 @@ const Home = () => {
                                         <div className="mt-auto">
                                             <div className="flex justify-between items-center mb-4">
                                                 <span className="text-3xl font-bold text-amber-600">
-                                                    ${sweet.price}
+                                                    {sweet.price}
                                                 </span>
                                                 {sweet.quantity > 0 ? (
                                                     <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
@@ -216,5 +216,6 @@ const Home = () => {
         </div>
     );
 };
+
 
 export default Home;
