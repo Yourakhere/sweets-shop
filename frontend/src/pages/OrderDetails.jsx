@@ -155,7 +155,7 @@ const OrderDetails = () => {
                                     {item.name} <span className="text-gray-400 text-sm ml-2">x {item.qty}</span>
                                 </div>
                                 <div className="font-bold text-gray-700">
-                                    ${(item.qty * item.price).toFixed(2)}
+                                    {(item.qty * item.price).toFixed(2)}
                                 </div>
                             </div>
                         ))}
@@ -167,4 +167,5 @@ const OrderDetails = () => {
 };
 
 export default OrderDetails;
+
 
