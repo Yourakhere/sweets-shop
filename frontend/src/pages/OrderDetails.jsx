@@ -137,7 +137,7 @@ const OrderDetails = () => {
                             </div>
                             <div className="flex justify-between pt-4 border-t border-gray-100 mt-2">
                                 <span className="text-gray-800 font-bold text-lg">Total Amount</span>
-                                <span className="text-amber-700 font-bold text-xl">${order.totalPrice.toFixed(2)}</span>
+                                <span className="text-amber-700 font-bold text-xl">{order.totalPrice.toFixed(2)}</span>
                             </div>
                         </div>
                     </div>
@@ -167,3 +167,4 @@ const OrderDetails = () => {
 };
 
 export default OrderDetails;
+
